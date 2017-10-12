@@ -1,0 +1,241 @@
+@import "variables.scss";
+
+* {
+    transition: all 0.3s;
+
+    div a{
+        color: #000;
+        &:active,&:hover,&:focus,&:visited {
+        text-decoration: none;
+        color: #000;
+        }
+    }
+}
+
+
+
+.wrapper {
+    min-width: 380px;
+    min-height: 101vh;
+}
+
+button:focus {
+    outline: none;
+}
+
+ .logo > a {
+     padding-left: 0;
+     padding-top: 0;
+
+ }
+.logo-pic, .logo-pic > img{
+    width: 8vw;
+    min-width: 80px;
+    max-width: 110px;
+    background-position: left top;
+    background-size: contain;
+}
+
+// Shoping Cart!
+.cart{
+    >div{
+        >div{
+            display: flex;
+            >span{
+                padding-left: 50px;                
+            }
+        }
+        h4{
+            font-size: 2vw;
+        }
+    }
+} 
+
+@media all and (max-width: 800px){
+    .cart > div > h4{
+        font-size: 14px;
+    }
+}
+@media all and (min-width: 1100px){
+    .cart >div > h4{
+        font-size: 22px;
+    }
+}
+// Shoping Cart: END
+
+// Search!
+.search, .form-control{
+    min-width: 100px;
+}
+.inner-addon .glyphicon{
+    position: absolute;
+    padding: 10px;
+    margin-top: 10px;
+}  
+.right-addon .glyphicon {
+     right: 15px;
+     color: #302f2f;
+     
+    }
+   
+.form-control {
+    margin-top: 10px;
+}
+
+.search-b:active{
+    color: #e2e2e2;
+    
+}
+// Search: END!
+
+/* Header menu styles */
+
+.sh-header-menu {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.sh-header-menu nav {
+    height: 20px;
+    display: flex;
+}
+
+.sh-header-menu a {
+    color: #000;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.sh-header-menu a:hover {
+    text-decoration: none;
+    color: rgba(0,0,0,0.7);    
+}
+
+#menuToggle {
+    width: 30px;
+    height: 30px;
+    display: none;
+    border: none;
+    background: transparent;
+}
+
+.icon-bar {
+    width: 20px;
+    height: 3px;
+    margin: 2px 0;
+    background: #000;
+}
+
+@media (max-width: 700px)
+{
+    #menuToggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .sh-header-menu {
+        justify-content: flex-end !important;
+    }
+
+    .sh-header-menu nav {
+        width: calc(100% - 40px);
+        flex-direction: column;
+        z-index: 1;
+        background: #fff;
+        position: absolute;
+        top: 25px;
+        left: 0;
+    }
+    
+    .sh-header-menu.sh-active nav {
+        height: auto;
+    }
+
+    .sh-header-menu nav a:nth-child(n + 2)
+    {
+        display: none;
+    }
+
+    .sh-header-menu.sh-active a {
+        display: block !important;
+    }
+}
+
+/* Header menu styles: End */
+.top-main-nav{
+    display: flex;    
+    justify-content: space-between;
+    margin: auto;
+}
+.top-main-nav ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: auto;
+    padding: 0 15px;
+}
+
+@media (max-width: 480px){
+    .top-main-nav ul{
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+    .top-main-nav > ul > li{
+        width: 25%;
+        transition: unset;
+    }
+
+}
+
+.top-main-nav li {
+    list-style: none;
+    color: #000;
+    width: 100%;
+    text-align: center;
+}
+.top-main-nav li:first-child{
+    border-left: none;
+}
+.top-main-nav li:last-child{
+    border-right: none;
+}
+.top-main-nav li:nth-child(2n) {
+  background-color: #b5b5b5;
+  border-bottom: none;
+  border-top: none;
+}
+.top-main-nav > ul > li a {
+    color: #ffffff;
+    padding: 10px 10px;
+    display: block;
+    font-weight: bold;
+    font-variant: small-caps;
+   
+}
+.top-main-nav a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+
+.top-main-nav > ul > li {
+    @each $num , $color in $colors {
+        &:nth-child(#{$num}){
+               
+            background-color: $color;
+        }
+    }
+}
+
+.top-main-nav > ul > li {
+    @each $num , $color in $colors-hover {
+        &:nth-child(#{$num}):hover{
+               
+            background-color: $color;
+        }
+    }
+}

@@ -1,0 +1,181 @@
+
+@import "variables.scss";
+
+.content{
+    margin-top: 20px;
+}
+
+.content ul li{
+    list-style-type: none;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    padding: 5px 5px 5px 10px;
+}
+
+#sh-category{
+    justify-content: center;
+    padding-left: 5px;
+
+        >h3{
+        margin: 0;
+        } 
+}
+
+.sub-1 {
+    flex-direction: column;
+    align-items: flex-start;
+    
+    >i{
+        position: absolute;
+        right: 5px;
+        top: auto;
+    }
+    >ul{
+        padding: 0;
+
+    }
+    ul>li{
+        display: none;
+        >a:hover{
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+    &:hover{
+        ul>li{
+        display:flex;
+        flex-direction: column;
+        }   
+    }
+
+} 
+
+
+@media all and (min-width: 992px)
+{
+    #main-nav-left{ 
+        position: sticky;
+        top: 15px;
+    }
+}
+
+#main-nav-left{ 
+    display: flex;
+
+    > ul{
+        flex-direction: column;
+        padding: 0;
+        width: 100%;
+        li>a{
+            font-weight: bold;
+            font-variant: small-caps;
+            color: #000;
+        }
+    }
+}
+
+.nav-lists {
+    @each $num , $color in $colors {
+        &:nth-of-type(#{$num}){
+               
+            background-color: $color;
+        }
+    }
+    @each $num , $color in $colors-hover {
+        &:nth-child(#{$num}):hover{
+               
+            background-color: $color;
+        }
+    }
+position: relative;
+
+}
+
+
+.sh-section{ 
+    display: flex;
+    flex-direction: row;
+    img{
+        width: 100%;
+    }
+    &-product{
+        margin: 0 -5px;
+        >div{
+            padding: 0 5px;
+            >.sh-product-item {
+                display: flex;
+                flex-direction: column;
+                border: 1px solid rgba(169, 169, 169,0.5);
+                padding: 5px 10px;
+                position: relative;
+                margin-bottom: 10px;
+                &:hover {
+                    border: 1px solid rgb(169, 169, 169);
+                }
+            }
+            
+        }
+    }
+}
+
+.product-description {
+    display: flex;
+    flex-direction: column;
+
+    >.product-details {
+        display: flex;
+        flex-direction: column;
+
+        >div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding: 4px 0;
+            span:first-child {
+                color: #000;
+            }
+
+            span:last-child {
+                color: #333;
+            }
+            
+            span:first-child::after {
+                content: ":";
+            }
+
+            &:last-child {
+                border: none;
+            }
+        }
+
+    }
+
+    >.product-price {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: rgb(5, 106, 0);
+        font-weight: bold;
+        font-size: 18px;
+    }
+    >.product-add-to-cart{
+        border: 1px solid #cecece;
+        background-color: rgba(0, 154, 3, 0.8);
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+
+        &:hover{
+            background-color: rgb(0, 154, 5);
+        }
+    }
+}
+
+
+footer{
+    background-color: #000;
+    >p{
+        color: #cecece;
+    }
+}

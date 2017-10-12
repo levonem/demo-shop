@@ -1,0 +1,17 @@
+
+menuToggle.onclick = function() {
+    var myTopnav = document.getElementById("myTopnav");
+    
+    myTopnav.classList.toggle("sh-active");
+}
+
+window.onclick = function(event)
+{
+    if(!(event.target == menuToggle || event.target.parentNode == menuToggle))
+    {
+        var myTopnav = document.getElementById("myTopnav");
+        myTopnav.classList.remove("sh-active");
+    }
+}
+
+document.getElementsByClassName
